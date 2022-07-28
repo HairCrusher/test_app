@@ -1,0 +1,16 @@
+<div>
+  <button class="button" (click)="updateListEmitter$.next()" [disabled]="loading">Обновить</button>
+</div>
+
+<div>
+  <label>
+    Сумма в рублях:
+    <input class="input" type="number" [disabled]="loading" [(ngModel)]="value">
+  </label>
+</div>
+
+<ul [class.loading]="loading" class="list">
+  <li *ngFor="let item of currencyList$ | async">
+    <app-currency-item [value]="value" [currency]="item"></app-currency-item>
+  </li>
+</ul>

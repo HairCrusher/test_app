@@ -1,0 +1,5 @@
+<div *ngIf="currency && value !== undefined">
+  <strong class="name">{{currency.Name}}</strong>
+  <span class="value">{{currency?.Value | currency: currency.CharCode : 'symbol-narrow'}}</span>
+  <span>{{value / currency.Value | number}} шт.</span>
+</div>
